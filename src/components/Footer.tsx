@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Twitter, Youtube, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
 
 const categories = [
@@ -13,6 +16,30 @@ const categories = [
 ];
 
 export const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [subscribing, setSubscribing] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubscribe = async () => {
+    if (!email || !email.includes("@")) {
+      toast({ title: "कृपया वैध ईमेल प्रविष्ट करा", variant: "destructive" });
+      return;
+    }
+    setSubscribing(true);
+    const { error } = await supabase.from("newsletter_subscribers").insert({ email });
+    if (error) {
+      if (error.code === "23505") {
+        toast({ title: "तुम्ही आधीच सदस्य आहात!" });
+      } else {
+        toast({ title: "Error", description: error.message, variant: "destructive" });
+      }
+    } else {
+      toast({ title: "सदस्यत्व यशस्वी! 🎉" });
+      setEmail("");
+    }
+    setSubscribing(false);
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Newsletter Section */}
@@ -29,10 +56,12 @@ export const Footer = () => {
               <input
                 type="email"
                 placeholder="आपला इमेल प्रविष्ट करा"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="px-4 py-3 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50 font-marathi flex-1 md:w-64 focus:outline-none focus:ring-2 focus:ring-secondary"
               />
-              <Button variant="secondary" className="font-marathi px-6">
-                सदस्यता
+              <Button variant="secondary" className="font-marathi px-6" onClick={handleSubscribe} disabled={subscribing}>
+                {subscribing ? "..." : "सदस्यता"}
               </Button>
             </div>
           </div>
