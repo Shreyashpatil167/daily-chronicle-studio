@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Search, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { NewsCard } from "@/components/NewsCard";
+import { useSearchArticles } from "@/hooks/useArticles";
 import logo from "@/assets/logo.png";
 
 const categories = [
@@ -17,6 +19,9 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const { data: searchResults = [], isLoading: searching } = useSearchArticles(searchQuery);
+  const navigate = useNavigate();
 
   const toggleDark = () => {
     setIsDark(!isDark);
@@ -52,11 +57,7 @@ export const Navbar = () => {
       <div className="container py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex-shrink-0">
-            <img
-              src={logo}
-              alt="नाशिक एक्सप्रेस"
-              className="h-16 md:h-20 w-auto object-contain"
-            />
+            <img src={logo} alt="नाशिक एक्सप्रेस" className="h-16 md:h-20 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -77,7 +78,7 @@ export const Navbar = () => {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setSearchOpen(!searchOpen)}
+              onClick={() => { setSearchOpen(!searchOpen); setSearchQuery(""); }}
               className="text-foreground"
             >
               <Search className="h-5 w-5" />
@@ -107,10 +108,44 @@ export const Navbar = () => {
               <input
                 type="text"
                 placeholder="बातम्या शोधा..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-3 pr-12 border border-border rounded-lg bg-background font-marathi focus:outline-none focus:ring-2 focus:ring-primary"
+                autoFocus
               />
               <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             </div>
+
+            {/* Search Results */}
+            {searchQuery.length >= 2 && (
+              <div className="mt-2 bg-card border border-border rounded-lg shadow-lg max-h-96 overflow-y-auto">
+                {searching ? (
+                  <p className="p-4 text-muted-foreground font-marathi text-sm">शोधत आहे...</p>
+                ) : searchResults.length > 0 ? (
+                  <div className="p-2 space-y-1">
+                    {searchResults.slice(0, 5).map((article) => (
+                      <Link
+                        key={article.id}
+                        to={`/article/${article.id}`}
+                        className="block p-3 rounded-md hover:bg-muted transition-colors"
+                        onClick={() => { setSearchOpen(false); setSearchQuery(""); }}
+                      >
+                        <p className="font-headline text-sm font-semibold text-headline line-clamp-1">
+                          {article.title}
+                        </p>
+                        <p className="text-xs text-muted-foreground mt-1 line-clamp-1">
+                          {article.excerpt}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="p-4 text-muted-foreground font-marathi text-sm">
+                    कोणतेही परिणाम सापडले नाहीत
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         )}
       </div>
