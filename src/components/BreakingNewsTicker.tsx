@@ -1,11 +1,8 @@
 import { AlertCircle } from "lucide-react";
 
 const breakingNews = [
-  "नाशिक महापालिकेच्या निवडणुकीची तयारी सुरू",
-  "गोदावरी नदीवरील नवीन पुलाचे उद्घाटन आज",
-  "नाशिक-मुंबई महामार्गावर वाहतूक कोंडी",
-  "शेतकऱ्यांना कर्जमाफीची घोषणा",
-  "नाशिक जिल्ह्यात पावसाचा इशारा",
+  "हे संकेतस्थळ सध्या विकासाधीन आहे. काही वैशिष्ट्ये किंवा माहिती अपूर्ण असू शकतात. आपल्या सहकार्याबद्दल धन्यवाद.",
+  "This website is currently under development. Some features or content may be incomplete. We appreciate your patience.",
 ];
 
 export const BreakingNewsTicker = () => {
