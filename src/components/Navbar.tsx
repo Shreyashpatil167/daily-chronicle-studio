@@ -88,27 +88,6 @@ export const Navbar = () => {
               </Button>
             </Link>
 
-            {user ? (
-              <div className="hidden sm:flex items-center gap-2">
-                {isEditor && (
-                  <Link to="/admin">
-                    <Button variant="outline" size="sm" className="font-marathi">
-                      <LayoutDashboard className="h-4 w-4 mr-1" /> व्यवस्थापन
-                    </Button>
-                  </Link>
-                )}
-                <Button variant="ghost" size="sm" onClick={() => signOut()} className="font-marathi text-muted-foreground">
-                  बाहेर पडा
-                </Button>
-              </div>
-            ) : (
-              <Link to="/login" className="hidden sm:block">
-                <Button variant="outline" size="sm" className="font-marathi">
-                  <LogIn className="h-4 w-4 mr-1" /> लॉगिन
-                </Button>
-              </Link>
-            )}
-
             <Button
               variant="ghost"
               size="icon"
