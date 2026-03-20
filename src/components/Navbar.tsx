@@ -169,35 +169,6 @@ export const Navbar = () => {
             >
               📰 आजचे वृत्तपत्र डाउनलोड करा
             </Link>
-            {user ? (
-              <>
-                {isEditor && (
-                  <Link
-                    to="/admin"
-                    className="block px-4 py-3 font-marathi text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <LayoutDashboard className="h-4 w-4 inline mr-2" />
-                    व्यवस्थापन पॅनेल
-                  </Link>
-                )}
-                <button
-                  onClick={() => { signOut(); setIsOpen(false); }}
-                  className="block w-full text-left px-4 py-3 font-marathi text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
-                >
-                  बाहेर पडा
-                </button>
-              </>
-            ) : (
-              <Link
-                to="/login"
-                className="block px-4 py-3 font-marathi text-primary font-semibold"
-                onClick={() => setIsOpen(false)}
-              >
-                <LogIn className="h-4 w-4 inline mr-2" />
-                लॉगिन / नोंदणी करा
-              </Link>
-            )}
           </div>
         </nav>
       )}
