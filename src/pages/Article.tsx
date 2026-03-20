@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, User, Calendar, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NewsCard } from "@/components/NewsCard";
+import { ShareButtons } from "@/components/ShareButtons";
 import { useArticle, useRelatedArticles } from "@/hooks/useArticles";
 import { Skeleton } from "@/components/ui/skeleton";
 
