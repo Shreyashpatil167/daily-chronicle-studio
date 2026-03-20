@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Twitter, Youtube, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Youtube, Instagram, LogIn, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
 import logo from "@/assets/logo.png";
 
 const categories = [
@@ -19,6 +20,7 @@ export const Footer = () => {
   const [email, setEmail] = useState("");
   const [subscribing, setSubscribing] = useState(false);
   const { toast } = useToast();
+  const { user, isEditor, signOut } = useAuth();
 
   const handleSubscribe = async () => {
     if (!email || !email.includes("@")) {
@@ -175,13 +177,30 @@ export const Footer = () => {
             <p className="font-marathi">
               © {new Date().getFullYear()} नाशिक एक्सप्रेस. सर्व हक्क राखीव.
             </p>
-            <div className="flex gap-4">
+            <div className="flex items-center gap-4">
               <Link to="/privacy" className="hover:text-secondary transition-colors">
                 गोपनीयता धोरण
               </Link>
               <Link to="/terms" className="hover:text-secondary transition-colors">
                 नियम व अटी
               </Link>
+              <span className="border-l border-primary-foreground/20 h-4" />
+              {user ? (
+                <span className="flex items-center gap-3">
+                  {isEditor && (
+                    <Link to="/admin" className="hover:text-secondary transition-colors flex items-center gap-1">
+                      <LayoutDashboard className="h-3.5 w-3.5" /> Admin
+                    </Link>
+                  )}
+                  <button onClick={() => signOut()} className="hover:text-secondary transition-colors">
+                    Logout
+                  </button>
+                </span>
+              ) : (
+                <Link to="/login" className="hover:text-secondary transition-colors flex items-center gap-1">
+                  <LogIn className="h-3.5 w-3.5" /> Login
+                </Link>
+              )}
             </div>
           </div>
         </div>

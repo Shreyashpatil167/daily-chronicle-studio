@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, Search, Moon, Sun, User, LogIn, LayoutDashboard } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Menu, X, Search, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSearchArticles } from "@/hooks/useArticles";
-import { useAuth } from "@/contexts/AuthContext";
 import logo from "@/assets/logo.png";
 
 const categories = [
@@ -21,8 +20,6 @@ export const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const { data: searchResults = [], isLoading: searching } = useSearchArticles(searchQuery);
-  const { user, isEditor, signOut } = useAuth();
-  const navigate = useNavigate();
 
   const toggleDark = () => {
     setIsDark(!isDark);
@@ -90,27 +87,6 @@ export const Navbar = () => {
                 📰 आजचे वृत्तपत्र
               </Button>
             </Link>
-
-            {user ? (
-              <div className="hidden sm:flex items-center gap-2">
-                {isEditor && (
-                  <Link to="/admin">
-                    <Button variant="outline" size="sm" className="font-marathi">
-                      <LayoutDashboard className="h-4 w-4 mr-1" /> व्यवस्थापन
-                    </Button>
-                  </Link>
-                )}
-                <Button variant="ghost" size="sm" onClick={() => signOut()} className="font-marathi text-muted-foreground">
-                  बाहेर पडा
-                </Button>
-              </div>
-            ) : (
-              <Link to="/login" className="hidden sm:block">
-                <Button variant="outline" size="sm" className="font-marathi">
-                  <LogIn className="h-4 w-4 mr-1" /> लॉगिन
-                </Button>
-              </Link>
-            )}
 
             <Button
               variant="ghost"
@@ -193,35 +169,6 @@ export const Navbar = () => {
             >
               📰 आजचे वृत्तपत्र डाउनलोड करा
             </Link>
-            {user ? (
-              <>
-                {isEditor && (
-                  <Link
-                    to="/admin"
-                    className="block px-4 py-3 font-marathi text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <LayoutDashboard className="h-4 w-4 inline mr-2" />
-                    व्यवस्थापन पॅनेल
-                  </Link>
-                )}
-                <button
-                  onClick={() => { signOut(); setIsOpen(false); }}
-                  className="block w-full text-left px-4 py-3 font-marathi text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors"
-                >
-                  बाहेर पडा
-                </button>
-              </>
-            ) : (
-              <Link
-                to="/login"
-                className="block px-4 py-3 font-marathi text-primary font-semibold"
-                onClick={() => setIsOpen(false)}
-              >
-                <LogIn className="h-4 w-4 inline mr-2" />
-                लॉगिन / नोंदणी करा
-              </Link>
-            )}
           </div>
         </nav>
       )}

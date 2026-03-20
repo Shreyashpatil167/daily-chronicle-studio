@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
-import { Clock, User, Calendar, Share2, Facebook, Twitter } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Clock, User, Calendar } from "lucide-react";
 import { NewsCard } from "@/components/NewsCard";
+import { ShareButtons } from "@/components/ShareButtons";
 import { useArticle, useRelatedArticles } from "@/hooks/useArticles";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -78,11 +78,7 @@ const Article = () => {
                 <span className="font-marathi">{article.readTime}</span>
               </span>
               <div className="flex-1" />
-              <div className="flex items-center gap-2">
-                <Button variant="outline" size="icon"><Facebook className="h-4 w-4" /></Button>
-                <Button variant="outline" size="icon"><Twitter className="h-4 w-4" /></Button>
-                <Button variant="outline" size="icon"><Share2 className="h-4 w-4" /></Button>
-              </div>
+              <ShareButtons title={article.title} />
             </div>
           </header>
 
