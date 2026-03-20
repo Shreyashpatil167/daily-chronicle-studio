@@ -20,6 +20,7 @@ export const Footer = () => {
   const [email, setEmail] = useState("");
   const [subscribing, setSubscribing] = useState(false);
   const { toast } = useToast();
+  const { user, isEditor, signOut } = useAuth();
 
   const handleSubscribe = async () => {
     if (!email || !email.includes("@")) {
