@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Twitter, Youtube, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Youtube, Instagram, LogIn, LayoutDashboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
 import logo from "@/assets/logo.png";
 
 const categories = [
