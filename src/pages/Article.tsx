@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
-import { Clock, User, Calendar, Share2, Facebook, Twitter } from "lucide-react";
+import { Clock, User, Calendar, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NewsCard } from "@/components/NewsCard";
 import { useArticle, useRelatedArticles } from "@/hooks/useArticles";
