@@ -20,8 +20,6 @@ export const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const { data: searchResults = [], isLoading: searching } = useSearchArticles(searchQuery);
-  const { user, isEditor, signOut } = useAuth();
-  const navigate = useNavigate();
 
   const toggleDark = () => {
     setIsDark(!isDark);
