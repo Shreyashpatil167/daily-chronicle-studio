@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Search, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSearchArticles } from "@/hooks/useArticles";
-import { useAuth } from "@/contexts/AuthContext";
 import logo from "@/assets/logo.png";
 
 const categories = [
