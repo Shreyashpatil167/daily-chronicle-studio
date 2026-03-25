@@ -150,7 +150,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
                 <span className="font-marathi text-primary-foreground/80">
-                  नाशिक एक्सप्रेस कार्यालय, मेनरोड, नाशिक - ४२२००१
+                  Ronak Heights, Raccca Colony, Sharanpur Road, Nashik 422005
                 </span>
               </li>
               <li className="flex items-center gap-3">
