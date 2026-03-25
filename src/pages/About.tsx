@@ -90,7 +90,7 @@ const About = () => {
                 <Mail className="h-6 w-6 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">इमेल</h4>
-                  <p className="text-primary-foreground/80">contact@nashikexpress.com</p>
+                  <a href="mailto:nashikexpressmedia10@gmail.com" className="text-primary-foreground/80 hover:underline">nashikexpressmedia10@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">

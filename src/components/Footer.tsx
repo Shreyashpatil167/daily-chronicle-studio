@@ -161,9 +161,9 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5" />
-                <span className="text-primary-foreground/80">
-                  contact@nashikexpress.com
-                </span>
+                <a href="mailto:nashikexpressmedia10@gmail.com" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  nashikexpressmedia10@gmail.com
+                </a>
               </li>
             </ul>
           </div>
