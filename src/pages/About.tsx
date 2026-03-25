@@ -83,7 +83,7 @@ const About = () => {
                 <Phone className="h-6 w-6 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">दूरध्वनी</h4>
-                  <p className="text-primary-foreground/80">+91 253 2570XXX</p>
+                  <a href="tel:+919405600057" className="text-primary-foreground/80 hover:underline">+91 94056 00057</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
