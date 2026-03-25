@@ -4,6 +4,7 @@ import { NewsCard } from "@/components/NewsCard";
 import { PDFDownloadBanner } from "@/components/PDFDownloadBanner";
 import { CategorySection } from "@/components/CategorySection";
 import { Footer } from "@/components/Footer";
+import { AdBanner } from "@/components/AdBanner";
 import { useFeaturedArticles, useCategorySectionArticles } from "@/hooks/useArticles";
 import { Skeleton } from "@/components/ui/skeleton";
 
