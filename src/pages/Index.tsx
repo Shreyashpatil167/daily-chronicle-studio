@@ -57,6 +57,11 @@ const Index = () => {
           </div>
         )}
 
+        {/* Ad between sections */}
+        <div className="mb-10">
+          <AdBanner format="horizontal" className="rounded-xl" />
+        </div>
+
         {sports.length > 0 && (
           <div className="animate-fade-in-up">
             <CategorySection title="क्रीडा" slug="sports" articles={sports} layout="list" />
