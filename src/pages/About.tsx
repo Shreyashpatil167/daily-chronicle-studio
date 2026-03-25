@@ -75,7 +75,7 @@ const About = () => {
                 <div>
                   <h4 className="font-semibold mb-1">कार्यालय पत्ता</h4>
                   <p className="font-marathi text-primary-foreground/80">
-                    नाशिक एक्सप्रेस कार्यालय, मेनरोड, नाशिक - ४२२००१, महाराष्ट्र
+                    Ronak Heights, Raccca Colony, Sharanpur Road, Nashik 422005, Maharashtra
                   </p>
                 </div>
               </div>
@@ -83,14 +83,14 @@ const About = () => {
                 <Phone className="h-6 w-6 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">दूरध्वनी</h4>
-                  <p className="text-primary-foreground/80">+91 253 2570XXX</p>
+                  <a href="tel:+919405600057" className="text-primary-foreground/80 hover:underline">+91 94056 00057</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="h-6 w-6 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">इमेल</h4>
-                  <p className="text-primary-foreground/80">contact@nashikexpress.com</p>
+                  <a href="mailto:nashikexpressmedia10@gmail.com" className="text-primary-foreground/80 hover:underline">nashikexpressmedia10@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">

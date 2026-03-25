@@ -4,6 +4,7 @@ import { NewsCard } from "@/components/NewsCard";
 import { PDFDownloadBanner } from "@/components/PDFDownloadBanner";
 import { CategorySection } from "@/components/CategorySection";
 import { Footer } from "@/components/Footer";
+import { AdBanner } from "@/components/AdBanner";
 import { useFeaturedArticles, useCategorySectionArticles } from "@/hooks/useArticles";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -56,6 +57,11 @@ const Index = () => {
           </div>
         )}
 
+        {/* Ad between sections */}
+        <div className="mb-10">
+          <AdBanner format="horizontal" className="rounded-xl" />
+        </div>
+
         {sports.length > 0 && (
           <div className="animate-fade-in-up">
             <CategorySection title="क्रीडा" slug="sports" articles={sports} layout="list" />
@@ -67,6 +73,11 @@ const Index = () => {
             <CategorySection title="व्यापार" slug="business" articles={business} />
           </div>
         )}
+
+        {/* Ad between sections */}
+        <div className="mb-10">
+          <AdBanner format="horizontal" className="rounded-xl" />
+        </div>
 
         {entertainment.length > 0 && (
           <div className="animate-fade-in-up">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Facebook, Twitter, Youtube, Instagram, LogIn, LayoutDashboard } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, LogIn, LayoutDashboard, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -84,17 +84,17 @@ export const Footer = () => {
               नाशिक एक्सप्रेस - एकमेव स्वतंत्र वृत्तपत्र. नाशिक जिल्ह्यातील अग्रगण्य मराठी वृत्तपत्र.
             </p>
             <div className="flex gap-3 mt-4">
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <a href="https://www.facebook.com/share/1CgsNWg2bs/" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <a href="https://x.com/ExpressNashik" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <a href="https://www.instagram.com/nashikexpress_?igsh=MXU0aTh0am1mMnZleQ==" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
-                <Youtube className="h-5 w-5" />
+              <a href="https://whatsapp.com/channel/0029VbAqfCg2ER6q4QigIM0Z" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
+                <MessageCircle className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -150,20 +150,20 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
                 <span className="font-marathi text-primary-foreground/80">
-                  नाशिक एक्सप्रेस कार्यालय, मेनरोड, नाशिक - ४२२००१
+                  Ronak Heights, Raccca Colony, Sharanpur Road, Nashik 422005
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5" />
-                <span className="font-marathi text-primary-foreground/80">
-                  +91 253 2570XXX
-                </span>
+                <a href="tel:+919405600057" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  +91 94056 00057
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5" />
-                <span className="text-primary-foreground/80">
-                  contact@nashikexpress.com
-                </span>
+                <a href="mailto:nashikexpressmedia10@gmail.com" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  nashikexpressmedia10@gmail.com
+                </a>
               </li>
             </ul>
           </div>
