@@ -84,17 +84,17 @@ export const Footer = () => {
               नाशिक एक्सप्रेस - एकमेव स्वतंत्र वृत्तपत्र. नाशिक जिल्ह्यातील अग्रगण्य मराठी वृत्तपत्र.
             </p>
             <div className="flex gap-3 mt-4">
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <a href="https://www.facebook.com/share/1CgsNWg2bs/" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <a href="https://x.com/ExpressNashik" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
+              <a href="https://www.instagram.com/nashikexpress_?igsh=MXU0aTh0am1mMnZleQ==" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
-                <Youtube className="h-5 w-5" />
+              <a href="https://whatsapp.com/channel/0029VbAqfCg2ER6q4QigIM0Z" target="_blank" rel="noopener noreferrer" className="p-2 bg-primary-foreground/10 rounded-full hover:bg-secondary hover:text-secondary-foreground transition-colors">
+                <MessageCircle className="h-5 w-5" />
               </a>
             </div>
           </div>
