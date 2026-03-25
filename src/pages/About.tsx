@@ -75,7 +75,7 @@ const About = () => {
                 <div>
                   <h4 className="font-semibold mb-1">कार्यालय पत्ता</h4>
                   <p className="font-marathi text-primary-foreground/80">
-                    नाशिक एक्सप्रेस कार्यालय, मेनरोड, नाशिक - ४२२००१, महाराष्ट्र
+                    Ronak Heights, Raccca Colony, Sharanpur Road, Nashik 422005, Maharashtra
                   </p>
                 </div>
               </div>
